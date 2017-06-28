@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.tmpl" %}
+    <title>Admin Section</title>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Admin Section - {{type}} Section</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <div class="demo-avatar-dropdown">
+                <span>{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    {% include "partials/userdropdown.tmpl" %}
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            {% include "partials/adminsidemenu.tmpl" %}
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content addUserGrid">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="addSection">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Add New Section</h2>
+                </div>
+                <form action="" method="post">
+                    <div class="mdl-card__supporting-text ">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label fullWidth">
+                            <input class="mdl-textfield__input" name="name" type="text" id="name" value="{{current}}">
+                            <label class="mdl-textfield__label" for="name">Name</label>
+                        </div>
+                        {% if edit %}
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="archived">
+                            <input type="checkbox" id="archived" name="Archived" value="false" class="mdl-switch__input" {%if archived%}checked{%endif%}>
+                            <span class="mdl-switch__label">Archived </span>
+                        </label>
+                        {% endif %}
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

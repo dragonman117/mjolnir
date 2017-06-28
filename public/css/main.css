@@ -1,0 +1,192 @@
+.demo-navigation{
+    height: 80vh;
+}
+.demo-drawer-header{
+    height: 20vh;
+}
+.demo-header{
+    background-color: white !important;
+}
+
+.addUserGrid{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+#newUser.demo-card-wide .mdl-card__title{
+    background: url('/img/welcome.jpg') center / cover;
+}
+
+#addSection.demo-card-wide .mdl-card__title{
+    background: url('/img/section.jpg') center / cover;
+}
+
+.demo-card-wide.mdl-card {
+    width: 512px;
+    align-self: center !important;
+}
+
+.demo-card-wide .mdl-card__title {
+    color: #fbf6ff;
+    height: 225px;
+
+    text-shadow: #CCC 1px 0 10px;
+}
+
+.demo-card-wide  .mdl-card__title > h2{
+    background-color: rgba(105,150,150, .6);
+    padding: 5px;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+.err-box{
+    padding: 10px;
+    background-color: rgba(197, 2, 0, 0.5);
+}
+
+.bold{
+    font-weight: 800;
+}
+
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+html, body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.demo-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+}
+.demo-layout .mdl-layout__header .mdl-layout__drawer-button {
+    color: rgba(0, 0, 0, 0.54);
+}
+.mdl-layout__drawer .avatar {
+    margin-bottom: 16px;
+}
+.demo-drawer {
+    border: none;
+}
+/* iOS Safari specific workaround */
+.demo-drawer .mdl-menu__container {
+    z-index: -1;
+}
+.demo-drawer .demo-navigation {
+    z-index: -2;
+}
+/* END iOS Safari specific workaround */
+.demo-drawer .mdl-menu .mdl-menu__item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.demo-drawer-header {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 16px;
+    height: 151px;
+}
+.demo-avatar-dropdown {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.demo-navigation {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.demo-layout .demo-navigation .mdl-navigation__link {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.56);
+    font-weight: 500;
+}
+.demo-layout .demo-navigation .mdl-navigation__link:hover {
+    background-color: #00BCD4;
+    color: #37474F;
+}
+.demo-navigation .mdl-navigation__link .material-icons {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.56);
+    margin-right: 32px;
+}
+.fab-float-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.sectionsCard{
+    background: url('/img/stepBG.jpg') center / cover;
+    min-height: 150px;
+    color: white;
+}
+
+.whiteBg{
+    background-color: white;
+}
+
+.flexIt{
+    display: flex;
+}
+
+.flex-full{
+    flex: 1;
+}
+.lr-pad{
+    padding: 0 8px;
+}
+.underline{
+    border-bottom: 1px solid #CCCCCC;
+}
+.full-width{
+    width: 100%;
+}

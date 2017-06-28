@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <div class="item">
+        <div id="root" style="width: 320px; margin: 40px auto; padding: 10px; box-sizing: border-box;">
+            embedded area
+        </div>
+        <script src="https://cdn.auth0.com/js/lock/10.15/lock.min.js"></script>
+        <script>
+            var lock = new Auth0Lock('3kXXg0OA1Xg7Hs5iZocODeVv8cKHb5Wr', 'usu-dev-student.auth0.com', {
+                container: 'root',
+                auth: {
+                    redirectUrl: 'http://127.0.0.1:3000/oauth2callback',
+                    responseType: 'code',
+                    params: {
+                        scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+                    },
+                    sso: false
+                },
+                theme:{
+                    logo: "http://127.0.0.1:3000/img/logo.png",
+                    primaryColor: '#0f2339'
+                },
+                additionalSignUpFields: [
+                    {
+                        name: "full_name",
+                        placeholder: "Full Name",
+                        icon: "http://127.0.0.1:3000/img/user.png"
+
+                    },
+                    {
+                        name: "a_num",
+                        placeholder: "A Number",
+                        icon: "http://127.0.0.1:3000/img/card.png"
+                    }
+                ]
+            });
+            lock.show();
+        </script>
+    </div>
+</div>
+</body>
+</html>

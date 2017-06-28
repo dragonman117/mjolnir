@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.tmpl" %}
+    <title>Admin {{type}} Exams</title>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Admin {{type}} Exams</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <div class="demo-avatar-dropdown">
+                <span>{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    {% include "partials/userdropdown.tmpl" %}
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            {% include "partials/adminsidemenu.tmpl" %}
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100 flexIt">
+        <div class="mdl-grid demo-content flex-full">
+            <div class="mdl-cell mdl-cell--9-col mdl-shadow--2dp whiteBg">
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--12-col underline">
+                        <h4 class="lr-pad">Exam</h4>
+                    </div>
+                    <form action="" method="post" class="full-width">
+                        <div class="mdl-cell mdl-cell--12-col lr-pad">
+                            <div class="mdl-textfield mdl-js-textfield full-width">
+                                <input class="mdl-textfield__input" type="text" pattern="^[ .,!&\-()\w\d]+$" id="sample2">
+                                <label class="mdl-textfield__label" for="sample2">Name</label>
+                                <span class="mdl-textfield__error">Input must be a character, number, or punctuation(.,!?-&)</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.tmpl" %}
+    <title>New User</title>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">New User</span>
+            <div class="mdl-layout-spacer"></div>
+
+        </div>
+    </header>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content addUserGrid">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="newUser">
+                <form action="/install/admin" method="post">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Welcome</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        {% if admin %}
+                        <p>Welcome to Mjolnir! This is a secure, testing system built using Go Language, and Docker.</p>
+                        <p>You are the first user to sign up, and as such you will become the global admin. Please
+                            fill out the required information, and hit the next button to be taken to the dashboard.</p>
+                        {% endif %}
+
+                        {% if error %}
+                        <div class="err-box">
+                            <span class="bold">Error:</span> Please fill out all fields correctly.
+                        </div>
+                        {% endif %}
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label fullWidth">
+                            <input class="mdl-textfield__input" type="text" name="fname" pattern="^[\w']{2,}$" id="fName">
+                            <label class="mdl-textfield__label" for="fName">First Name</label>
+                            <span class="mdl-textfield__error">Must Enter a valid First Name</span>
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label fullWidth">
+                            <input class="mdl-textfield__input" type="text" name="lname" pattern="^[\w']{2,}$" id="lName">
+                            <label class="mdl-textfield__label" for="lName">Last Name</label>
+                            <span class="mdl-textfield__error">Must Enter a valid Last Name</span>
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label fullWidth">
+                            <input class="mdl-textfield__input" type="text" pattern="^[\d]{6,}$" name="anum" id="anum">
+                            <label class="mdl-textfield__label" for="lName">A Number (wihtout the A)</label>
+                            <span class="mdl-textfield__error">Must Enter a valid A Number (minuse the A)</span>
+                        </div>
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <div class="mdl-layout">
+                            <div class="mdl-layout-spacer"></div>
+                            <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Save
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

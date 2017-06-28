@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.tmpl" %}
+    <title>Admin Section</title>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Admin Section</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <div class="demo-avatar-dropdown">
+                <span>{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    {% include "partials/userdropdown.tmpl" %}
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            {% include "partials/adminsidemenu.tmpl" %}
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+            {% for section in sections %}
+            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+                <div class="mdl-card__title sectionsCard">
+                    <h2 class="mdl-card__title-text">{{section.Name}}</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a href="/admin/sections/edit/{{section.ID}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Edit
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href = "/admin/sections/add" class="mdl-button mdl-button--raised mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored fab-float-button">
+            <i class="material-icons">add</i>
+        </a>
+    </main>
+</div>
+</body>
+</html>
